@@ -1,0 +1,16 @@
+<div class="submit-comment">
+  <form method="POST" action="/comments/submit/<%= post._id %>">
+    <div>
+      <textarea
+        name="comment"
+        placeholder="Comment"
+        cols="30"
+        rows="5"
+        maxlength="500"
+        required
+      ></textarea>
+      <span id="comment-count"></span>
+    </div>
+    <button id="submit-comment-btn" type="submit">Post</button>
+  </form>
+</div>

@@ -1,0 +1,112 @@
+{
+    "themes": [
+        {
+            "name": "Coral",
+            "mainBg": "#f5deb3",
+            "chatBg": "#f86b37",
+            "fromBg": "#000000",
+            "fromFont": "#ffffff",
+            "toBg": "#ffffff",
+            "toFont": "#000000",
+            "buttonBg": "#f86b37",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#000000"
+        },
+        {
+            "name": "Ocean",
+            "mainBg": "#75b8ff",
+            "chatBg": "#004084",
+            "fromBg": "#133455",
+            "fromFont": "#ffffff",
+            "toBg": "#0e59e5",
+            "toFont": "#ffffff",
+            "buttonBg": "#004084",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#000000"
+        },
+        {
+            "name": "Default",
+            "mainBg": "#d3d3d3",
+            "chatBg": "#ffffff",
+            "fromBg": "#d3d3d3",
+            "fromFont": "#000000",
+            "toBg": "#0e59e5",
+            "toFont": "#ffffff",
+            "buttonBg": "#0e59e5",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#000000"
+        },
+        {
+            "name": "Starlight",
+            "mainBg": "#b9a2f5",
+            "chatBg": "#3e2779",
+            "fromBg": "#413269",
+            "fromFont": "#ffffff",
+            "toBg": "#a044d5",
+            "toFont": "#ffffff",
+            "buttonBg": "#3e2779",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#000000"
+        },
+        {
+            "name": "WhatsThat",
+            "mainBg": "#262d31",
+            "chatBg": "#0d1418",
+            "fromBg": "#262d31",
+            "fromFont": "#ffffff",
+            "toBg": "#056162",
+            "toFont": "#ffffff",
+            "buttonBg": "#056162",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#ffffff"
+        },
+        {
+            "name": "Dune",
+            "mainBg": "#3a4445",
+            "chatBg": "#3a3730",
+            "fromBg": "#5c554d",
+            "fromFont": "#ffffff",
+            "toBg": "#52acb4",
+            "toFont": "#ffffff",
+            "buttonBg": "#3a3730",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#ffffff"
+        },
+        {
+            "name": "Plum",
+            "mainBg": "#1c0402",
+            "chatBg": "#6c3c3a",
+            "fromBg": "#472929",
+            "fromFont": "#ffffff",
+            "toBg": "#bd3937",
+            "toFont": "#ffffff",
+            "buttonBg": "#6c3c3a",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#ffffff"
+        },
+        {
+            "name": "Party",
+            "mainBg": "#171022",
+            "chatBg": "#313c7a",
+            "fromBg": "#3a324a",
+            "fromFont": "#ffffff",
+            "toBg": "#c60968",
+            "toFont": "#ffffff",
+            "buttonBg": "#313c7a",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#ffffff"
+        },
+        {
+            "name": "Chocolate",
+            "mainBg": "#231814",
+            "chatBg": "#4a301f",
+            "fromBg": "#372f2d",
+            "fromFont": "#ffffff",
+            "toBg": "#ae8746",
+            "toFont": "#ffffff",
+            "buttonBg": "#4a301f",
+            "buttonFont": "#ffffff",
+            "usernameFont": "#ffffff"
+        }
+    ]
+}

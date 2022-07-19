@@ -1,0 +1,113 @@
+body {
+  background: linear-gradient(45deg, var(--color-alpha), var(--color-psi), var(--color-alpha));
+  background-attachment: fixed;
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+body {
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.tab {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 90%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.tab > button {
+  all: unset;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.tab > button > h4 {
+  margin: 0;
+}
+
+.selected-tab {
+  border-bottom: 5px solid var(--color-omega) !important;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-header > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  outline: 5px solid var(--color-omega);
+  border: 5px solid var(--color-psi);
+  position: absolute;
+  top: 100px;
+}
+
+.profile-header > h3 {
+  margin-top: 30px;
+}
+
+.chat-button {
+  all: unset;
+  background-color: var(--color-omega);
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.chat-button:hover {
+  background-color: var(--color-psi);
+}
+
+.main-container {
+  display: flex !important;
+}
+
+.comment-section {
+  display: none !important;
+}
+
+.post-container {
+  width: 100% !important;
+}
+
+#comments-wrapper {
+  width: 85% !important;
+}
+
+@media (max-width: 992px) {
+  #comments-wrapper {
+    width: 100% !important;
+  }
+}

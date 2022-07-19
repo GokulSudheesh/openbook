@@ -1,0 +1,109 @@
+body {
+  background: linear-gradient(45deg, var(--color-alpha), var(--color-psi), var(--color-alpha));
+  background-attachment: fixed;
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+main {
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+.post-container {
+  background-color: var(--color-beta);
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.heading {
+  margin: auto;
+}
+
+.heading > h3 {
+  margin: auto;
+}
+
+.form-container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container > form > div {
+  width: 100%;
+}
+
+input[name=title] {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 5px;
+}
+
+textarea[name=content] {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  resize: vertical;
+}
+
+#title-count, #content-count {
+  font-size: 12px;
+}
+
+select[name=type] {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type=checkbox]:checked {
+  filter: invert(8%) hue-rotate(18deg) brightness(1.7);
+}
+
+.error-message {
+  margin: 0;
+  color: #e64c4c;
+  font-size: 12px;
+}
+
+#submit {
+  font-size: 16px;
+  background-color: var(--color-omega);
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: var(--color-psi);
+}
+
+
+
+@media (max-width: 992px) {
+  .post-container {
+    width: 90%;
+  }
+}

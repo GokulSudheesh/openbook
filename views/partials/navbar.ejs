@@ -1,0 +1,94 @@
+<link rel="stylesheet" href="/css/navbar.css">
+<script src="/js/navbar.js" defer></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<header>
+  <div class="navbar">
+    <a class="logo" href="/">
+      <img src="/images/openbook-logo.png" alt="openbook">
+      <h3>openbook</h3>
+    </a>
+    <div class="links">
+      <% if (req.isAuthenticated()) { %>
+        <ul class="desktop-links">
+          <li>
+            <div class="search-container">
+              <form method="GET" action="/account/search">
+                <input type="text" name="query" autocomplete="off" placeholder="Search" value="<%= req.query.query %>" required/>
+                <button type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </li>
+          <li>
+            <a class="chat-icon" href="/submit">
+              <i class="fas fa-plus-circle"></i>
+            </a>
+          </li>
+          <li>
+            <a class="chat-icon" href="/chat/inbox">
+              <!-- <i class="fas fa-inbox"></i> -->
+              <i class="fas fa-comments"></i>
+            </a>
+          </li>
+          <li>
+            <div class="profile">
+              <img src=<%= req.user.profilePic %> alt=<%= req.user.username %>>
+              <span>
+                <%= req.user.username%> 
+              </span>
+            </div>
+          </li>
+          <li>
+            <a class="login" href="/account/logout">Logout</a>
+          </li>
+        </ul>
+        <ul class="mobile-links">
+          <li>
+            <div class="profile">
+              <img src=<%= req.user.profilePic %> alt=<%= req.user.username %>>
+              <span>
+                <%= req.user.username%> 
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="search-container">
+              <form method="GET" action="/account/search">
+                <input type="text" name="query" autocomplete="off" placeholder="Search" value="<%= req.query.query %>" required/>
+                <button type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </li>
+          <li>
+            <a class="chat-icon" href="/submit">
+              <i class="fas fa-plus-circle"></i> Create Post
+            </a>
+          </li>
+          <li>
+            <a class="chat-icon" href="/chat/inbox">
+              <!-- <i class="fas fa-inbox"></i> -->
+              <i class="fas fa-comments"></i> Chat
+            </a>
+          </li>
+          <li>
+            <a class="login" href="/account/logout">Logout</a>
+          </li>
+        </ul>
+      <% } else { %>
+        <ul>
+          <li>
+            <a class="login" href="/account/login">Login</a>
+          </li>
+        </ul>
+      <% } %>
+    </div>
+    <div class="icon" id="icon">
+      <span id="top"></span>
+      <span id="mid"></span>
+      <span id="low"></span>
+    </div>
+  </div>
+</header>

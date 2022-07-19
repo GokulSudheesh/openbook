@@ -1,0 +1,32 @@
+<div class="comment-section">
+  <% if (comments.length) { %>
+    <div id="comments-wrapper" user-id="<%= req.user._id %>">
+      <% for (const comment of comments) { %>
+        <div comment-id="<%= comment._id %>" class="comment-wrapper">
+          <div class="header">
+            <div class="author">
+              <img src="<%= comment.author.profilePic %>" alt="<%= comment.author.username %>">
+              <a href="/account/profile/<%= comment.author.username %>"><%= comment.author.username %></a>
+            </div>
+          </div>
+          <p><%= comment.comment %></p>
+          <% if (req.user._id.equals(comment.author._id)) { %>
+            <button class="delete-comment-btn delete-btn" comment-id="<%= comment._id %>"><i class="fas fa-trash"></i></button>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+    <button post-id="<%= post._id %>" id="loadComments">See more</button>
+    <div id="spinner" class="cell">
+      <div class="card">
+        <span class="heartbeat-loader">Loading&#8230;</span>
+      </div>
+    </div>
+  <% } else { %>
+    <div id="empty-box">
+      <img src="/images/cute/bongocat.gif" width="300px" alt="bongo cat">
+      <p>Hmmm. Comment section seems to be empty.</p>
+      <p>Let's fix that by adding some positivity? ^_^</p>
+    </div>
+  <% } %>
+</div>

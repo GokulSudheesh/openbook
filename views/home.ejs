@@ -1,0 +1,21 @@
+<%- include('./partials/header', { links: [
+    '<link rel="stylesheet" href="/css/home.css" />'
+  ] }); -%>
+<%- include('./partials/navbar') -%>
+<script src="/js/home.js" defer></script>
+<article class="card">
+  <img id="cats" class="circle" src="/images/cute/cat-0.png" alt="cute cat"/>
+  <img id="dogs" class="circle" src="/images/cute/dog-0.png" alt="cute dog"/>
+  <div class="card-inner">
+    <h1>openbook</h1>
+    <div class="content">
+      <p>
+        An open space for you to talk about your feelings anonymously. <br> 
+        Talk to a friendly community who will support and reach out to you. ❤
+      </p>
+      <p>Sign up to get started 😸</p>
+    </div>
+    <a href="/account/register" class="login">Sign up</a>
+  </div>
+</article>
+<%- include('./partials/footer'); -%>

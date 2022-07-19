@@ -1,0 +1,137 @@
+body {
+  /* background-color: var(--color-alpha); */
+  background: linear-gradient(45deg, var(--color-alpha), var(--color-psi), var(--color-alpha));
+  background-attachment: fixed;
+  /* background-size: cover; */
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+main {
+  width: 100%;
+  height: 85vh;
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.heading > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: var(--color-omega);
+    color: var(--color-beta);
+}
+
+.heading > h1 {
+  color: var(--color-beta);
+  margin: 0;
+}
+
+#chat-box {
+  /* border-radius: 20px 20px 0 0; */
+  border-radius: 20px;
+  background-color: var(--color-beta);
+  width: 100%;
+  height: 90%;
+  /* outline: 5px solid var(--color-omega); */
+  overflow: hidden scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-box > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: rgb(161, 161, 161);
+}
+
+.chat-item {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: #000000;
+  /* border-bottom: 2px solid var(--color-psi); */
+}
+
+.chat-item:hover {
+    background-color: var(--color-gamma);
+}
+
+.chat-item > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.chat-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.read {
+    color: rgb(128, 128, 128);
+    font-size: 14px;
+    /* min-width: 5px; */
+}
+
+.unread {
+    color: rgb(128, 128, 128);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.date {
+    color: rgb(128, 128, 128);
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.notify {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-omega);
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(85, 85, 85, 0.238);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(136, 136, 136);
+}

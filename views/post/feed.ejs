@@ -1,0 +1,22 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/feed.css" />',
+  '<link rel="stylesheet" href="/css/post.css" />',
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <div class="main-container">
+    <div id="posts-container">
+      <% for (const post of posts) { %>
+        <%- include('./feedPost', { post }); -%>
+      <% } %>
+    </div>
+    <button id="loadPosts">See more</button>
+    <div id="spinner" class="cell">
+      <div class="card">
+        <span class="heartbeat-loader">Loading&#8230;</span>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="/js/postsFeed.js"></script>
+<%- include('../partials/footer'); -%>

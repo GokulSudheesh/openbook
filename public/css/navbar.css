@@ -1,0 +1,203 @@
+.navbar {
+  width: 90%;
+  height: 50px;
+  margin: 0 5%;
+}
+
+ul li {
+  list-style-type: none;
+}
+/* global rules  */
+
+/* start header */
+header {
+  padding: 10px 0;
+  /* background-color: var(--color-alpha); */
+  /* background: linear-gradient(var(--color-alpha), var(--color-gamma)); */
+  /* background: linear-gradient(45deg, var(--color-psi), var(--color-alpha)); */
+  background: linear-gradient(45deg, var(--color-alpha), var(--color-psi), var(--color-alpha));
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+  color: var(--color-beta);
+  box-shadow: -1px 3px 23px -8px rgba(0, 0, 0, 0.84);
+  -webkit-box-shadow: -1px 3px 23px -8px rgba(0, 0, 0, 0.84);
+  -moz-box-shadow: -1px 3px 23px -8px rgba(0, 0, 0, 0.84);
+  /* position: fixed; */
+  width: 100%;
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .navbar .links ul {
+  display: flex;
+  align-items: center;
+}
+
+header .navbar .links ul li {
+  padding: 0 10px;
+}
+
+header .navbar .icon {
+  position: absolute;
+  width: 20px;
+  width: 20px;
+  height: 14px;
+  padding: 5px;
+  right: 5%;
+  cursor: pointer;
+  display: none;
+  z-index: 3;
+}
+
+header .navbar .icon span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-omega);
+  transition: all 0.3s;
+}
+
+header .navbar .icon span:first-of-type {
+}
+header .navbar .icon span:nth-last-of-type(2) {
+  margin-top: 6px;
+}
+header .navbar .icon span:last-of-type {
+  margin-top: 12px;
+}
+
+.logo, .profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: var(--color-beta);
+}
+
+.logo > h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo > img, .profile > img {
+  width: 50px;
+  height: 50px;
+}
+
+.profile > img {
+  border-radius: 50%;
+}
+
+.chat-icon {
+  color: var(--color-beta);
+  font-size: 24px;
+}
+
+.chat-icon:hover {
+  color: var(--color-psi);
+}
+
+.login {
+  background-color: var(--color-omega);
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: var(--color-beta);
+}
+
+.login:hover {
+  background-color: var(--color-psi);
+}
+
+.mobile-links {
+  display: none !important;
+}
+
+.search-container {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+
+.search-container > form > input[type="text"] {
+  all: unset;
+  color: #fff !important;
+}
+
+.search-container > form > button {
+  all: unset;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .desktop-links {
+    display: none !important;
+  }
+
+  .mobile-links {
+    display: flex !important;
+  }
+
+  .mobile-links > li > a {
+    text-decoration: none;
+  }
+
+
+  header .navbar .links {
+    /* background-color: var(--color-alpha); */
+    background: linear-gradient(45deg, var(--color-psi), var(--color-alpha));
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    flex-direction: column;
+    width: 100%;
+    right: -50%;
+    z-index: 2;
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    transition: all 0.5s ease;
+  }
+  header .navbar .links.active {
+    display: flex;
+    /* justify-content: flex-start; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    right: 0%;
+  }
+  header .navbar .links ul {
+    margin-top: 100px;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 20px;
+    /* height: 50%; */
+    justify-content: space-between;
+  }
+  header .navbar .icon {
+    display: flex;
+    justify-content: center;
+  }
+  header .navbar .icon.active span:first-of-type {
+    margin-top: 6px;
+    transform: rotate(45deg);
+  }
+  header .navbar .icon.active span:nth-last-of-type(2) {
+    opacity: 0;
+  }
+
+  header .navbar .icon.active span:last-of-type {
+    margin-top: 6px;
+    transform: rotate(-45deg);
+  }
+}
+/* end header */

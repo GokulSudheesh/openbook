@@ -1,0 +1,11 @@
+<%- include('./partials/header', { links: [
+    '<link rel="stylesheet" href="/css/error.css" />'
+  ] }); -%>
+<%- include('./partials/navbar') -%>
+    <h2><%= err.statusCode %>: <%=err.statusMessage%></h2>
+    <% if (process.env.NODE_ENV !== "production") { %>
+        <p><%= err.message %></p>
+        <hr>
+        <p><%= err.stack %></p>
+    <% } %>
+<%- include('./partials/footer'); -%>

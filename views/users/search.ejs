@@ -1,0 +1,23 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/search.css" />'
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <% if (users.length) { %>
+    <% for (const user of users) { %>
+      <div class="user-container">
+        <a href="/account/profile/<%= user.username %>">
+          <img src="<%= user.profilePic %>" alt="<%= user.username %>">
+          <p><%= user.username %></p>
+        </a>
+      </div>
+      <hr>
+    <% } %>
+  <% } else { %>
+    <div id="empty-box">
+      <img src="/images/cute/bongocat.gif" width="200px" alt="bongo cat">
+      <p>No results</p>
+    </div>
+  <% } %>
+</main>
+<%- include('../partials/footer'); -%>

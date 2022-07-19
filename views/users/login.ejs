@@ -1,0 +1,47 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/signup.css" />'
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <div class="container">
+    <h4>Sign in to your account</h4>
+    <form method="POST" action="/account/login">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Enter username..."
+        autocomplete="off"
+        required
+      />
+      <label for="password">Password</label>
+      <div class="password-field">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="current-password"
+          placeholder="Enter password..."
+          required
+        />
+        <i onclick="show(this)" class="fas fa-eye"></i>
+      </div>
+      <% if (errors) { %>
+      <ul class="errors">
+        <% for (const error of errors) { %>
+        <li><%= error %></li>
+        <% } %>
+      </ul>
+      <% } %>
+      <button id="login" type="submit">Login</button>
+    </form>
+    <a class="login-with-google-btn" href="/account/login/google"
+      >Sign in with Google</a
+    >
+    <p>Don't have an account?</p>
+    <a id="signup" href="/account/register">Register</a>
+  </div>
+</main>
+<script src="/js/formUtil.js"></script>
+<%- include('../partials/footer'); -%>

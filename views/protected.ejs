@@ -1,0 +1,10 @@
+<%- include('./partials/header', { links: [
+    '<link rel="stylesheet" href="/css/protected.css" />'
+  ] }); -%>
+<%- include('./partials/navbar') -%>
+<main>
+    <h1>You are in protected route.</h1>
+    <a href="/chat/inbox">Chat</a>
+    <a href="/account/logout">Logout</a>
+</main>
+<%- include('./partials/footer'); -%>

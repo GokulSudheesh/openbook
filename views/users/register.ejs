@@ -1,0 +1,97 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/signup.css" />'
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <div class="container">
+    <h4>Create a new account</h4>
+    <form method="POST" action="/account/register">
+      <label for="username">Username</label>
+      <% if (locals.errors && errors[0].username) { %>
+        <input
+          class="error-input"
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username..."
+          autocomplete="off"
+          value="<%= errors[0].username.value %>"
+          required
+        />
+        <p class="error-message"><%= errors[0].username.msg %></p>  
+      <% } else { %>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter username..."
+          autocomplete="off"
+          value="<%= req.body.username %>"
+          required
+        />
+      <% } %>
+      <label for="password">Password</label>
+      <% if (locals.errors && errors[0].password1) { %>
+        <div class="password-field">
+          <input
+            class="error-input"
+            type="password"
+            name="password1"
+            autocomplete="new-password"
+            id="password1"
+            placeholder="Enter password..."
+            required
+          />
+          <i onclick="show(this)" class="fas fa-eye"></i>
+        </div>
+        <p class="error-message"><%= errors[0].password1.msg %></p> 
+      <% } else { %>
+        <div class="password-field">
+          <input
+            type="password"
+            name="password1"
+            autocomplete="new-password"
+            id="password1"
+            placeholder="Enter password..."
+            required
+          />
+          <i onclick="show(this)" class="fas fa-eye"></i>
+        </div>
+      <% } %>
+      <label for="password">Confirm Password</label>
+      <% if (locals.errors && errors[0].password2) { %>
+        <div class="password-field">
+          <input
+            class="error-input"
+            type="password"
+            name="password2"
+            autocomplete="new-password"
+            id="password2"
+            placeholder="Confirm password..."
+            required
+          />
+          <i onclick="show(this)" class="fas fa-eye"></i>
+        </div>
+        <p class="error-message"><%= errors[0].password2.msg %></p> 
+      <% } else { %>
+        <div class="password-field">
+          <input
+            type="password"
+            name="password2"
+            autocomplete="new-password"
+            id="password2"
+            placeholder="Confirm password..."
+            required
+          />
+          <i onclick="show(this)" class="fas fa-eye"></i>
+        </div>
+      <% } %>
+      <button id="login" type="submit">Register</button>
+    </form>
+    <a class="login-with-google-btn" href="/account/login/google"
+      >Sign in with Google</a
+    >
+  </div>
+</main>
+<script src="/js/formUtil.js"></script>
+<%- include('../partials/footer'); -%>

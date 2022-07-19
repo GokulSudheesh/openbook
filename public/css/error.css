@@ -1,0 +1,17 @@
+body {
+  /* background-color: var(--color-alpha); */
+  background: linear-gradient(45deg, var(--color-alpha), var(--color-psi), var(--color-alpha));
+  background-attachment: fixed;
+  /* background-size: cover; */
+  background-size: 1800% 1800%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+  color: #fff;
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+h2 {
+  text-align: center;
+}

@@ -1,0 +1,22 @@
+<a class="post-wrapper" href="/posts/<%= post._id %>" id="<%= post._id %>">
+  <div class="post-container">
+    <div class="header">
+      <div class="author">
+        <% if (post.isAnonymous) {%>
+          <img src="/images/anonymous.jpg" alt="anonymous">
+          <p>Anonymous</p>
+        <% } else { %>
+          <img src="<%= post.author.profilePic %>" alt="<%= post.author.username %>">
+          <p><%= post.author.username %></p>
+        <% } %>
+      </div>
+    </div>
+    <div class="title-section">
+      <h3><%= post.title %></h3>
+      <p class="post-type"><%= post.type %></p>
+    </div>
+    <div class="content-section">
+      <p><%= post.content %></p>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,68 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/create.css" />'
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <div class="post-container">
+    <div class="heading">
+      <h3>Edit post</h3>
+      <hr/>
+    </div>
+    <div class="form-container">
+      <form method="POST" action="/posts/edit/<%= post._id %>">
+        <div>
+          <!-- <label for="title">Title</label> -->
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+            autocomplete="off"
+            value="<%= post.title %>"
+            maxlength="100"
+            required
+          />
+          <span id="title-count"></span>
+          <% if (locals.errors && errors[0].title) { %>
+            <span class="error-message"><%= errors[0].title.msg %></span> 
+          <% } %>
+        </div>
+        <div>
+          <!-- <label for="content">Content</label><br> -->
+          <textarea
+            name="content"
+            placeholder="Content"
+            cols="30"
+            rows="10"
+            maxlength="800"
+            required
+          ><%= post.content %></textarea>
+          <span id="content-count"></span>
+          <% if (locals.errors && errors[0].content) { %>
+            <span class="error-message"><%= errors[0].content.msg %></span> 
+          <% } %>
+        </div>
+        <div>
+          <label for="type">Type</label>
+          <select name="type" id="">
+            <option value="Motivational" <%= post.type === "Motivational" ? 'selected' : '' %>>Motivational</option>
+            <option value="Off My Chest" <%= post.type === "Off My Chest" ? 'selected' : '' %>>Off My Chest</option>
+          </select>
+          <% if (locals.errors && errors[0].type) { %>
+            <span class="error-message"><%= errors[0].type.msg %></span> 
+          <% } %>
+        </div>
+        <div id="checkbox-wrapper">
+          <label for="isAnonymous">Anonymous</label>
+          <input type="checkbox" name="isAnonymous" id="" value="true" <%= post.isAnonymous ? 'checked' : ''%>>
+          <% if (locals.errors && errors[0].isAnonymous) { %>
+            <span class="error-message"><%= errors[0].isAnonymous.msg %></span> 
+          <% } %>
+        </div>
+        <button id="submit" type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script src="/js/postForm.js"></script>
+<%- include('../partials/footer'); -%>

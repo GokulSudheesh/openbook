@@ -1,0 +1,68 @@
+<%- include('../partials/header', { links: [
+  '<link rel="stylesheet" href="/css/profile.css" />',
+  '<link rel="stylesheet" href="/css/feed.css" />',
+  '<link rel="stylesheet" href="/css/post.css" />',
+] }); -%>
+<%- include('../partials/navbar') -%>
+<main>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="<%= user.profilePic %>" alt="<%= user.username %>">
+      <h3><%= user.username %></h3>
+    </div>
+    <% if (!(req.user._id.equals(user._id))) { %>
+      <a class="chat-button" href="/chat?to=<%= user.username %>">
+        <span>Chat</span>
+        <i class="fas fa-comments"></i>
+      </a>
+      <% } %>
+  </div>
+</main>
+<div class="tab">
+  <button tab-slug="post" class="selected-tab"><h4>Posts</h4></button>
+  <button tab-slug="comment"><h4>Comments</h4></button>
+</div>
+<% if (posts.length) { %>
+  <div id="main-post-section" class="main-container">
+    <div id="posts-container">
+      <% for (const post of posts) { %>
+        <%- include('../post/feedPost', { post }); -%>
+      <% } %>
+    </div>
+    <button id="loadPosts">See more</button>
+    <div id="spinner" class="cell">
+      <div class="card">
+        <span class="heartbeat-loader">Loading&#8230;</span>
+      </div>
+    </div>
+  </div>
+<% } %>
+<% if (comments.length) { %>
+  <div id="main-comment-section" class="comment-section">
+    <div id="comments-wrapper" user-id="<%= req.user._id %>">
+      <% for (const comment of comments) { %>
+        <div comment-id="<%= comment._id %>" class="comment-wrapper">
+          <div class="header">
+            <div class="author">
+              <img src="<%= comment.author.profilePic %>" alt="<%= comment.author.username %>">
+              <a href="/account/profile/<%= comment.author.username %>"><%= comment.author.username %></a>
+            </div>
+          </div>
+          <p><%= comment.comment %></p>
+          <% if (req.user._id.equals(comment.author._id)) { %>
+            <button class="delete-comment-btn delete-btn" comment-id="<%= comment._id %>"><i class="fas fa-trash"></i></button>
+          <% } %>
+          <a href="/posts/<%= comment.post._id %>">Go to post</a>
+        </div>
+      <% } %>
+    </div>
+    <button id="loadComments">See more</button>
+    <div id="spinner" class="cell">
+      <div class="card">
+        <span class="heartbeat-loader">Loading&#8230;</span>
+      </div>
+    </div>
+  </div>
+<% } %>
+<script src="/js/profile.js"></script>
+<%- include('../partials/footer'); -%>

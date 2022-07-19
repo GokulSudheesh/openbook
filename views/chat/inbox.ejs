@@ -1,0 +1,38 @@
+<%- include('../partials/header', { links: [
+    '<link rel="stylesheet" href="/css/inbox.css" />',
+    '<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>'
+] }); -%>
+<%- include('../partials/navbar') -%>
+    <main>
+    <div class="heading">
+        <!-- <a href="/" type="button"><i class="fas fa-arrow-left"></i></a> -->
+        <h1>Inbox</h1>
+    </div>
+    <div id="chat-box">
+    <% if (friends.length) { %>
+        <% for (const friend of friends) { %>
+            <a class="chat-item" id="<%= friend.username %>" href="/chat?to=<%= friend.username %>">
+                <img src="<%= friend.profilePic %>" alt="<%= friend.username %>" />
+                <div class="chat-detail">
+                    <span class="username"><%= friend.username %></span>
+                    <span class=<%= friend.read ? "read" : "unread" %> read="<%= friend.read %>"><%= friend.text %></span>
+                </div>
+                <% if (friend.read) { %>
+                    <span class="date"><%= new Date(friend.date).toDateString(); %></span>
+                <% } %>
+                <% if (!friend.read) { %>
+                    <div class="notify"></div>
+                <% } %>
+            </a>
+        <% } %>
+    <% } else {%>
+        <div id="empty-box">
+            <img src="/images/cute/bongocat.gif" width="300px" alt="bongo cat">
+            <p>Looks like your inbox is empty. <br>But that's okay, why dont you start making some friends? ^-^</p>
+        </div>
+    <% } %>
+    </div>
+    </main>
+<script src="/js/socket.io.min.js"></script>
+<script src="/js/inbox.js"></script>
+<%- include('../partials/footer'); -%>

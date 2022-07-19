@@ -1,0 +1,43 @@
+main {
+  font-family: "OpenSans-Regular", "Roboto", sans-serif;
+}
+
+.main-container {
+  margin: auto;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-wrapper {
+  text-decoration: none;
+  color: #000;
+}
+
+.post-container {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+#loadPosts {
+  all: unset;
+  text-align: center;
+  background-color: var(--color-omega);
+  margin: auto;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Spinner */
+.cell {
+  margin: auto;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .main-container {
+    width: 90%;
+  }
+}

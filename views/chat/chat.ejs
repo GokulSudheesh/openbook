@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>openbook | Chat</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/chat.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+</head>
+<body>
+    <header>
+        <div class="user-info">
+            <a href="/chat/inbox" type="button"><i class="fas fa-arrow-left"></i></a>
+            <img src="<%= toUser.profilePic %>" alt="<%= toUser.username %>" />
+            <p id="username"><%= toUser.username %> </p>
+        </div>
+    </header>
+    <main class="container">
+    </main>
+    <form id="input">
+        <input
+          id="message-box"
+          name="message"
+          type="text"
+          placeholder="Enter Message"
+          autocomplete="off"
+          maxlength="500"
+          required
+        />
+        <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+    </form>
+    <script src="/js/theme.js"></script>
+    <script src="/js/socket.io.min.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
